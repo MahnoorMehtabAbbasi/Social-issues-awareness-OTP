@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OTP Verification</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/otp-verification.css">
+</head>
+<body>
+<div class="otp-wrapper">
+  <div class="otp-container">
+    <p class="otp-text">OTP Verification</p>
+    <p style="color: #8C8A8A; text-align: left;">We are sending you an OTP to verify your phone number.</p>
+    <p class="otp-edit">Edit <span class="otp-edit-xxx">XXXX XXXXXXX</span></p>
+    <p style="margin-top: 20px; margin-bottom: 20px; color: #8C8A8A;">Please Enter your Code Here</p>
+    <div class="otp-input">
+      <input type="text" class="otp-digit" maxlength="1">
+      <input type="text" class="otp-digit" maxlength="1">
+      <input type="text" class="otp-digit" maxlength="1">
+      <input type="text" class="otp-digit" maxlength="1">
+    </div>
+    <p style="margin-top: 10px;"><a href="#" class="otp-link" style="color: #8C8A8A;">I Didn't Receive a Code!</a></p>
+    <p><a href="#" class="otp-link" style="color: #7985F0;">Resend Code</a></p> 
+    <button class="btn otp-button">Verify</button>
+  </div>
+</div>
+<script>
+  const otpDigits = document.querySelectorAll('.otp-digit');
+  otpDigits.forEach((digitInput) => {
+    digitInput.addEventListener('input', () => {
+      if (digitInput.value !== '') {
+        digitInput.style.backgroundColor = '#EC407A'; 
+      } else {
+        digitInput.style.backgroundColor = ''; 
+      }
+    });
+  });
+</script>
+</body>
+</html>
